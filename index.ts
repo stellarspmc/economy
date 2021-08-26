@@ -1,5 +1,5 @@
 import { moneyData, getMoney, moneys, addresses, xuids } from "./economy";
-import { writeJSON } from "@bdsx/ckclib/json";
+import { writeJSON } from "@bdsx/ckclib";
 import { MinecraftPacketIds } from "bdsx/bds/packetids";
 import { Player } from "bdsx/bds/player";
 import { events } from "bdsx/event";
