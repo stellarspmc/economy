@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/tcfplayz/economy.git"
   },
-  "version": "1.4.1",
+  "version": "1.4.2",
   "dependencies": {
     "@bdsx/ckclib": "^1.0.0",
     "fs": "^0.0.1-security"
