@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RET_NO_ACCOUNT = exports.RET_NOT_ENOUGH_MONEY = exports.RET_INVALID = exports.RET_SUCCESS = exports.MAXIMUM_MONEY = exports.User = exports.getUser = exports.setMoney = exports.reduceMoney = exports.addMoney = exports.getMoney = exports.sendMessage = exports.xuids = exports.addresses = exports.moneys = exports.moneyData = void 0;
 const packets_1 = require("bdsx/bds/packets");
-const utils_1 = require("./utils");
+const utils_1 = require("@bdsx/ckclib");
 exports.moneyData = utils_1.parseJSON("../scriptData/money.json");
 exports.moneys = new Map();
 exports.addresses = new Map();
