@@ -1,6 +1,6 @@
 import {TextPacket} from "bdsx/bds/packets";
 import { Player } from 'bdsx/bds/player';
-import { parseJSON } from './utils';
+import { parseJSON } from '@bdsx/ckclib/json';
 
 export let moneyData = parseJSON("../scriptData/money.json");
 
@@ -32,13 +32,13 @@ export function getMoney(player: Player): number{
 	const user = moneys.get(player);
 	if(!user){
 		if(!moneyData[player.getName().toLowerCase()]){
-			
+
 			return RET_NO_ACCOUNT;
 		}
-		
+
 		return moneyData[player.getName().toLowerCase()];
 	}
-	
+
 	return user.getMoney();
 }
 
@@ -46,26 +46,26 @@ export function addMoney(player: Player, money: number): number{
 	const user = moneys.get(player);
 	if(!user){
 		if(!moneyData[player.getName().toLowerCase()]){
-			
+
 			return RET_NO_ACCOUNT;
 		}
 		if(money >= MAXIMUM_MONEY){
-			
+
 			return RET_INVALID;
 		}
 		if(money <= 0){
-			
+
 			return RET_INVALID;
 		}
 		if(money + moneyData[player.getName().toLowerCase()] >= MAXIMUM_MONEY){
-			
+
 			return RET_INVALID;
 		}
-		
+
 		moneyData[player.getName().toLowerCase()] += money;
 		return RET_SUCCESS;
 	}
-	
+
 	return user.addMoney(money);
 }
 
@@ -73,55 +73,55 @@ export function reduceMoney(player: Player, money: number): number{
 	const user = moneys.get(player);
 	if(!user){
 		if(!moneyData[player.getName().toLowerCase()]){
-			
+
 			return RET_NO_ACCOUNT;
 		}
 		if(money >= MAXIMUM_MONEY){
-			
+
 			return RET_INVALID;
 		}
 		if(money <= 0){
-			
+
 			return RET_INVALID;
 		}
 		if(moneyData[player.getName().toLowerCase()] - money < 0){
-			
+
 			return RET_NOT_ENOUGH_MONEY;
 		}
 		moneyData[player.getName().toLowerCase()] -= money;
-		
+
 		return RET_SUCCESS;
 	}
 
 	return user.reduceMoney(money);
-	
+
 }
 
 export function setMoney(player: Player, money: number): number{
-	
+
 	const user = moneys.get(player);
 	if(!user){
 		if(!moneyData[player.getName().toLowerCase()]){
-			
+
 			return RET_NO_ACCOUNT;
 		}
 		if(money >= MAXIMUM_MONEY){
-			
+
 			return RET_INVALID;
 		}
 		if(money < 0){
-			
+
 			return RET_INVALID;
 		}
 		moneyData[player.getName()] = money;
-		
+
 		return RET_SUCCESS;
 	}
 	return user.setMoney(money);
 }
 
 export function getUser(player: Player): User | null{
-	
+
 	const user = moneys.get(player);
 	if(!user){
 		return null;

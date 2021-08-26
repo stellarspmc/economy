@@ -1,5 +1,5 @@
 import { moneyData, getMoney, moneys, addresses, xuids } from "./economy";
-import { writeJSON } from "./utils";
+import { writeJSON } from "@bdsx/ckclib/json";
 import { MinecraftPacketIds } from "bdsx/bds/packetids";
 import { Player } from "bdsx/bds/player";
 import { events } from "bdsx/event";
@@ -18,7 +18,7 @@ events.packetAfter(MinecraftPacketIds.Login).on((packet, networkIdentifier) => {
 	name = networkIdentifier.getActor()?.getName();
 
 	if (packet.connreq == null) return;
-	
+
 	xuid = packet.connreq.cert.toString();
 
 	if (name != null && actor != null) {
@@ -42,7 +42,7 @@ events.packetAfter(MinecraftPacketIds.Disconnect).on((p, networkIdentifier) => {
 	moneyData[name.toLowerCase()] = user.getMoney();
 	moneys.delete(networkIdentifier.getActor() as Player);
 	addresses.delete(name);
-	
+
 	if(xuids.has(name.toLowerCase())){
 		xuids.delete(name.toLowerCase());
 	}}
