@@ -1,9 +1,42 @@
 {
+  "_args": [
+    [
+      "@bdsx/economy@1.4.2",
+      "C:\\Users\\chau1\\Desktop\\mc.spmc.ml"
+    ]
+  ],
+  "_from": "@bdsx/economy@1.4.2",
+  "_id": "@bdsx/economy@1.4.2",
+  "_inBundle": false,
+  "_integrity": "sha512-RLG5K5FNp6oOI2az6PA7mxAaweyC3VaLLpZMBi2vnDyWeBoowJ6VL40BlJbv0HrJeOjvWv2XQmqC2sYpY/RvXg==",
+  "_location": "/@bdsx/economy",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@bdsx/economy@1.4.2",
+    "name": "@bdsx/economy",
+    "escapedName": "@bdsx%2feconomy",
+    "scope": "@bdsx",
+    "rawSpec": "1.4.2",
+    "saveSpec": null,
+    "fetchSpec": "1.4.2"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@bdsx/economy/-/economy-1.4.2.tgz",
+  "_spec": "1.4.2",
+  "_where": "C:\\Users\\chau1\\Desktop\\mc.spmc.ml",
   "author": {
     "name": "tcfplayz, alvin0319"
   },
   "bugs": {
     "url": "https://github.com/alvin0319/bdsx-economyapi/issues"
+  },
+  "dependencies": {
+    "@bdsx/ckclib": "^1.1.0",
+    "fs": "^0.0.1-security"
   },
   "deprecated": false,
   "description": "A economy plugin.",
@@ -13,9 +46,5 @@
     "type": "git",
     "url": "git+https://github.com/tcfplayz/economy.git"
   },
-  "version": "1.4.2",
-  "dependencies": {
-    "@bdsx/ckclib": "^1.0.0",
-    "fs": "^0.0.1-security"
-  }
+  "version": "1.5.1"
 }
