@@ -1,8 +1,8 @@
 import {TextPacket} from "bdsx/bds/packets";
 import { Player } from 'bdsx/bds/player';
-import { parseJSON } from '@bdsx/ckclib/json';
+import { parseJSON, initJSONifNotExist } from '@bdsx/ckclib/json';
 
-
+initJSONifNotExist("../scriptData/money.json");
 export let moneyData = parseJSON("../scriptData/money.json");
 
 export const moneys = new Map<Player, User>();
